@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* Background image */
+.hero-overlay {
+    background: linear-gradient(
+        rgba(0,0,0,0.75),
+        rgba(0,0,0,0.85)
+    ),
+    url("/static/images/background.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Search Card */
+.search-card {
+    max-width: 480px;
+    margin: auto;
+    padding: 25px;
+    background: rgba(30,30,30,0.95);
+    border-radius: 12px;
+}
+
+/* Result Cards */
+.result-card {
+    background: #1f1f1f;
+    color: #fff;
+    border-radius: 12px;
+    transition: transform 0.2s ease;
+}
+
+.result-card:hover {
+    transform: scale(1.03);
+}

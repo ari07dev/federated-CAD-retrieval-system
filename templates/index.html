@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FUSION-CAD | Intelligent CAD Search</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="hero-overlay">
+    <div class="container text-center text-light">
+        <h1 class="display-4 fw-bold">FUSION-CAD</h1>
+        <p class="lead text-warning">
+            AI-Powered Multimodal CAD Retrieval Engine
+        </p>
+
+        <div class="card search-card shadow-lg">
+            <form method="POST" enctype="multipart/form-data">
+                <input name="query" class="form-control mb-3"
+                       placeholder="Example: storage vessel 0.5 KL">
+
+                <input type="file" name="image" class="form-control mb-3">
+
+                <button class="btn btn-warning w-100 fw-bold">
+                    🔍 Execute AI Search
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% if results %}
+<section class="container mt-5">
+    <h3 class="text-light mb-4">Search Results</h3>
+    <div class="row">
+        {% for r in results %}
+        <div class="col-md-4">
+            <div class="card result-card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">{{ r.name }}</h5>
+                    <p class="card-text">{{ r.description }}</p>
+
+                    <span class="badge bg-success">
+                        Confidence: {{ r.score }}
+                    </span>
+
+                    <a href="/download?node={{ r.node }}&file={{ r.file }}"
+
+                       class="btn btn-primary mt-3 w-100">
+                        ⬇ Download CAD PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+</body>
+</html>
