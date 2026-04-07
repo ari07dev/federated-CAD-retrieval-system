@@ -22,3 +22,38 @@ python run_production.py
 =======
 # federated-CAD-retrieval-system
 >>>>>>> aaf12933d15ca4c4a1e12369747d792310f74231
+# Federated CAD Retrieval System
+
+## 🚀 Overview
+A distributed AI-powered CAD search engine...
+
+## 🧠 Features
+- Text-based search
+- Sketch-based retrieval (CLIP)
+- Federated multi-node architecture
+- Dynamic asset addition
+- FAISS indexing
+
+## 🏗️ Architecture
+Frontend → Broker → Nodes (A, B, C)
+
+## ⚙️ Tech Stack
+- Python (Flask)
+- FAISS
+- CLIP / Encoder
+- SQLite
+- React (Frontend)
+
+## ▶️ How to Run
+1. Start Node A
+2. Start Node B
+3. Run Broker
+4. Run Frontend
+
+## 📸 Demo
+(Add screenshots)
+
+## 📌 Future Improvements
+- Add RAG
+- Improve ranking
+- Add explanation layer
